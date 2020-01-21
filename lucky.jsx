@@ -16,21 +16,35 @@ class Lucky extends React.Component {
         this.state ={
             title:"",
             content: "",
-            image:""
+            image:"",
+            count:0
         }
         this.handleClick = this.handleClick.bind(this)
 
     }
     
-  
+
      handleClick() {
         const number = Math.floor(Math.random()*lucky.length);
+        const { count } = this.state;
+        if(count<3){
+            this.setState({
+                count: count+1,
+                title: `${count+1} time`,
+                content: "Please close your eyes, and think of the things you want to play, thow 3 times you will see the result",
+                image:"./images/omikuji-box.jpg"
+                  })
+            }
+        else{
         this.setState({
+            count:0,
             title: lucky[number].title,
             content: lucky[number].content,
             image:lucky[number].image
               })
            }
+        }
+    
     
     componentDidMount(){
         this.setState({
@@ -46,7 +60,7 @@ class Lucky extends React.Component {
             <h1 className='title'>Random Fortunes</h1>
                 <div id="fortune-box" className="fortune-box">
                     <div className="fortune-author">
-                        <span id="author">-{this.state.title}</span>
+                        <span id="author">{this.state.title}</span>
                     </div>
                     <div className="fortune-text">
                         <span id="text">{this.state.content}</span>

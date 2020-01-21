@@ -167,7 +167,8 @@ function (_React$Component) {
     _this.state = {
       title: "",
       content: "",
-      image: ""
+      image: "",
+      count: 0
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
@@ -177,11 +178,23 @@ function (_React$Component) {
     key: "handleClick",
     value: function handleClick() {
       var number = Math.floor(Math.random() * lucky.length);
-      this.setState({
-        title: lucky[number].title,
-        content: lucky[number].content,
-        image: lucky[number].image
-      });
+      var count = this.state.count;
+
+      if (count < 3) {
+        this.setState({
+          count: count + 1,
+          title: "".concat(count + 1, " time"),
+          content: "Please close your eyes, and think of the things you want to play, thow 3 times you will see the result",
+          image: "./images/omikuji-box.jpg"
+        });
+      } else {
+        this.setState({
+          count: 0,
+          title: lucky[number].title,
+          content: lucky[number].content,
+          image: lucky[number].image
+        });
+      }
     }
   }, {
     key: "componentDidMount",
@@ -206,7 +219,7 @@ function (_React$Component) {
         className: "fortune-author"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         id: "author"
-      }, "-", this.state.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fortune-text"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         id: "text"
@@ -11562,7 +11575,7 @@ var updatedAncestorInfo = function () {};
   // <p> tags where the beginning of the second element implicitly closes the
   // first, causing a confusing mess.
   // https://html.spec.whatwg.org/multipage/syntax.html#special
-  var specialTags = ['address', 'applet', 'area', 'article', 'aside', 'base', 'basefont', 'bgsound', 'blockfortune', 'body', 'br', 'button', 'caption', 'center', 'col', 'colgroup', 'dd', 'details', 'dir', 'div', 'dl', 'dt', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'iframe', 'img', 'input', 'isindex', 'li', 'link', 'listing', 'main', 'marquee', 'menu', 'menuitem', 'meta', 'nav', 'noembed', 'noframes', 'noscript', 'object', 'ol', 'p', 'param', 'plaintext', 'pre', 'script', 'section', 'select', 'source', 'style', 'summary', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'title', 'tr', 'track', 'ul', 'wbr', 'xmp']; // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-scope
+  var specialTags = ['address', 'applet', 'area', 'article', 'aside', 'base', 'basefont', 'bgsound', 'blockquote', 'body', 'br', 'button', 'caption', 'center', 'col', 'colgroup', 'dd', 'details', 'dir', 'div', 'dl', 'dt', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'iframe', 'img', 'input', 'isindex', 'li', 'link', 'listing', 'main', 'marquee', 'menu', 'menuitem', 'meta', 'nav', 'noembed', 'noframes', 'noscript', 'object', 'ol', 'p', 'param', 'plaintext', 'pre', 'script', 'section', 'select', 'source', 'style', 'summary', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'title', 'tr', 'track', 'ul', 'wbr', 'xmp']; // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-scope
 
   var inScopeTags = ['applet', 'caption', 'html', 'table', 'td', 'th', 'marquee', 'object', 'template', // https://html.spec.whatwg.org/multipage/syntax.html#html-integration-point
   // TODO: Distinguish by namespace here -- for <title>, including it here
@@ -11745,7 +11758,7 @@ var updatedAncestorInfo = function () {};
       case 'address':
       case 'article':
       case 'aside':
-      case 'blockfortune':
+      case 'blockquote':
       case 'center':
       case 'details':
       case 'dialog':
