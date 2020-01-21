@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Handlee&display=swap');
+
+body {
+    background:lightseagreen;
+    font-family: 'Handlee', sans-serif;
+    font-size: large;
+    font-weight: 900;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.root {
+  width: 100%;
+}
+
+.fortune-box {
+width: 380px;
+margin: auto;
+padding: 30px 50px;
+display:table;
+border-radius: 10;
+border-style: dashed;
+background-color: white;
+}
+
+.title {
+  text-align: center;
+}
+.fortune-text {
+    text-align: center;
+    height: auto;
+    font-size: larger;
+}
+.fortune-author{
+    text-align: center;
+    height: auto;
+    padding-top: 20px;
+    font-size: xx-large;
+}
+.buttons{
+    width: 450px;
+    margin: auto;
+    display: block;
+}
+.button{
+    height:38px;
+    padding: 8px 18px 6px 18px;
+    margin-top: 30px;
+    font: 0.85em Handlee;
+    border-radius:3px;
+    color:#fff;
+    background-color:lightseagreen;
+    cursor: pointer;
+    opacity:1;
+
+
+}
+
+img{
+  display: block;
+  margin: auto;
+  padding-top: 50px;
+}
+.tweet-fortune{
+    float: left;
+}
+.new-quoate{
+    float: right;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+  }
+  
+footer{
+    width:450px;
+  text-align:center;
+  display:block;
+  margin:15px auto 30px auto;
+  font-size:0.8em;
+  color:#fff;
+}
