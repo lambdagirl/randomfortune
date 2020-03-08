@@ -1,15 +1,16 @@
 import React from "react";
 import axios from 'axios'
-const lucky=[
-    {title: "No.1 BEST FORTUNE",
-    content: "The tower of cloisonné with seven treasures is standing in a stately manner upon the high summit. People look at it and praise it, Your fortune is jus like this tower. When you look at it more carefully, your fortune. will be more excellent. *Your wishes will be realized.*A sick person will recover.*The person you are waiting for will come soon.*The lost article will be found but it will take a little while.*Building a new house, moving marriage, taking a trip, employment are all good *Be careful for everything that you want to do. If you are careless, you will get hurt injured.",
-    image:"http://www.yuenei.com/d/file/p/0c45289f5428055073f3a1be234a8b33.jpg"
-},
-    {title: "Lucky",
-    content: "Talent is a pursued interest. Anything that you're willing to practice, you can do.",
-    image:"http://www.yuenei.com/d/file/p/92954d8d15784a8d70cf98362506128b.jpg"}
+const lucky = require('./images/Qian/txt/lucky.json'); 
+// const lucky=[
+//     {title: "No.1 BEST FORTUNE",
+//     content: "The tower of cloisonné with seven treasures is standing in a stately manner upon the high summit. People look at it and praise it, Your fortune is jus like this tower. When you look at it more carefully, your fortune. will be more excellent. *Your wishes will be realized.*A sick person will recover.*The person you are waiting for will come soon.*The lost article will be found but it will take a little while.*Building a new house, moving marriage, taking a trip, employment are all good *Be careful for everything that you want to do. If you are careless, you will get hurt injured.",
+//     image:"./images/Qian/1大吉1.jpg"
+// },
+//     {title: "Lucky",
+//     content: "Talent is a pursued interest. Anything that you're willing to practice, you can do.",
+//     image:"http://www.yuenei.com/d/file/p/92954d8d15784a8d70cf98362506128b.jpg"}
 
-]
+// ]
 class Lucky extends React.Component {
     constructor(props){
         super(props);
