@@ -8,7 +8,7 @@ Omikuji is a Japanese word means random fortunes
 
 ### Process:
 * Using Python and some web scraping techniques to download images
-* Using [Tesseract] (https://github.com/tesseract-ocr/tesseract)to translate image to English text.
+* Using [tesseract](https://github.com/tesseract-ocr/tesseract) to recognize image text and convert to English.
 * Using React, Webpack, CSS and HTML to render the website.
 
 ### [Demo](https://lambdagirl.github.io/randomfortune/)
